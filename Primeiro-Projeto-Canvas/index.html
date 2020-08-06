@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+</head>
+<style>
+    canvas {
+        border: solid 1px
+    }
+</style>
+
+<body>
+    <canvas width="600" height="400"> 
+
+    </canvas>
+    <script>
+        var UP = 38,
+            DOWN = 40,
+            LEFT = 37,
+            RIGHT = 39;
+        var moveEsquerda = false,
+            moveDireita = false,
+            moveCima = false,
+            moveBaixo = false;
+        var cnv = document.querySelector('canvas');
+        var ctx = cnv.getContext('2d');
+        var p1 = {
+            x: 10,
+            y: 10
+        };
+        update();
+        window.addEventListener('keydown', keydownHandler);
+        window.addEventListener("keyup", keyupHandler);
+
+        function keydownHandler(e) {
+            var key = e.keyCode;
+            if (key === LEFT && key !== RIGHT) {
+                moveEsquerda = true;
+                p1.x--;
+
+            }
+            if (key === RIGHT && key !== LEFT) {
+                moveDireita = true;
+                p1.x++;
+
+            }
+            if (key === DOWN && key !== UP) {
+                moveBaixo = true;
+                p1.y++;
+            }
+            if (key === UP && key !== DOWN) {
+                moveCima = true;
+                p1.y--;
+            }
+
+
+
+        }
+
+        function keyupHandler(e) {
+            var key = e.keyCode;
+            if (key === LEFT && key !== RIGHT) {
+                moveEsquerda = false;
+                p1.x--;
+
+            }
+            if (key === RIGHT && key !== LEFT) {
+                moveDireita = false;
+                p1.x++;
+
+            }
+            if (key === DOWN && key !== UP) {
+                moveBaixo = false;
+                p1.y++;
+            }
+            if (key === UP && key !== DOWN) {
+                moveCima = false;
+                p1.y--;
+            }
+
+
+
+        }
+
+        function move() {
+            if (moveEsquerda) {
+                p1.x--;
+            }
+            if (moveDireita) {
+                p1.x++;
+            }
+            if (moveCima) {
+                p1.y--;
+            }
+            if (moveBaixo) {
+                p1.y++;
+            }
+        }
+
+
+        function render() {
+            ctx.clearRect(0, 0, cnv.width, cnv.height);
+            ctx.fillRect(p1.x, p1.y, 50, 50);
+
+        }
+
+        function update() {
+            requestAnimationFrame(update, cnv);
+            move();
+            render();
+        }
+    </script>
+</body>
+
+</html>
+
+</html>
