@@ -1,0 +1,64 @@
+body{
+	background-color: #83CBF1;
+}
+.form1{
+	width:400px;
+	margin:auto;
+	padding-top: 40 px;
+}
+.card{
+	box-shadow: 1px, 1px, 5px, #ccc;
+	background-color: #CBDDEA;
+	padding: 30px;
+	border-radius:5px;
+}
+.card-topo{
+	text-align:center;
+	
+}
+.card-grupos{
+	margin-bottom:20px;
+}
+.card-grupos> label{
+	width: 100%;
+	color: rgb(75,75,75);
+	display: block;
+	width:62%;
+	height:20px;
+}
+.card-grupos>input{
+	border-radius:5px;
+	outline:0px;
+	width:50%;
+	height:30px;
+	padding:5px;
+}
+.card-grupos>button{
+	background-image: linear-gradient(to left, #83CBF1, rgb(4,83,124));
+	width:40%;
+	border-radius:30px;
+	padding:10px;
+	height:30px;
+	color:white;
+	border:0px;
+	outline:0px;
+	cursor: pointer;
+	}
+
+
+.image-logo{
+	border-radius:400px;
+	width:100px;
+	box-shadow:0px 0px 1px #ccc;
+}
+.title{
+	
+	color:#051FC2;
+	font-family:SFProDisplay-Regular;
+}
+.card-grupos1{
+	width:78%;
+}
+
+
+	
